@@ -44,8 +44,6 @@
     },
     "lint-staged": {
         "./src/**/*": "prettier -uw --cache",
-        "./src/**/*.{ts,tsx}": [
-            "eslint --fix --report-unused-disable-directives --max-warnings 0"
-        ]
+        "./src/**/*.{ts,tsx}": "eslint --fix --report-unused-disable-directives --max-warnings 0"
     }
 }
