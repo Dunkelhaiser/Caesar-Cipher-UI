@@ -7,6 +7,7 @@
     "parser": "@typescript-eslint/parser",
     "extends": ["airbnb", "airbnb-typescript", "prettier"],
     "plugins": ["react-refresh"],
+    "ignorePatterns": ["vite.config.ts", "postcss.config.js"],
     "rules": {
         "react/react-in-jsx-scope": "off",
         "no-unreachable": "error",
