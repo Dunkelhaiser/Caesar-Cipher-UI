@@ -23,6 +23,7 @@
         "react/jsx-props-no-spreading": "off",
         "react/display-name": "warn",
         "react/button-has-type": "warn",
+        "spaced-comment": "warn",
         "react/function-component-definition": [
             "warn",
             {
