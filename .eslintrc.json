@@ -24,6 +24,7 @@
         "react/display-name": "warn",
         "react/button-has-type": "warn",
         "spaced-comment": "warn",
+        "@typescript-eslint/lines-between-class-members": "off",
         "react/function-component-definition": [
             "warn",
             {
