@@ -1,0 +1,70 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": ["airbnb", "airbnb-typescript", "prettier"],
+    "plugins": ["react-refresh"],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "no-unreachable": "error",
+        "react/jsx-key": "error",
+        "arrow-body-style": "warn",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "prefer-const": "warn",
+        "object-shorthand": "warn",
+        "react/self-closing-comp": "warn",
+        "react/jsx-no-useless-fragment": "warn",
+        "no-empty": "warn",
+        "no-plusplus": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/display-name": "warn",
+        "react/button-has-type": "warn",
+        "react/function-component-definition": [
+            "warn",
+            {
+                "namedComponents": "arrow-function",
+                "unnamedComponents": "arrow-function"
+            }
+        ],
+        "import/order": [
+            "warn",
+            {
+                // "newlines-between": "always",
+                "pathGroups": [
+                    {
+                        "pattern": "$/**",
+                        "group": "internal"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["builtin"],
+                "groups": [["builtin", "external"], ["internal"], ["parent", "sibling", "index"], "unknown"],
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                }
+            }
+        ],
+        "import/no-default-export": "error",
+        "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }]
+    },
+    "overrides": [
+        {
+            "files": ["*.jsx", "*.tsx"],
+            "rules": {
+                "import/no-default-export": "off"
+            }
+        },
+        {
+            "files": ["*.js", "*.ts"],
+            "rules": {
+                "import/prefer-default-export": "off"
+            }
+        }
+    ],
+    "parserOptions": {
+        "project": ["./tsconfig.json"]
+    }
+}
