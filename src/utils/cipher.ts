@@ -6,7 +6,7 @@ export class CaesarCipher {
      * Shifts a given character by a specified amount within the provided alphabet.
      *
      * @param char - The character to be shifted.
-     * @param shift - The amount to shift the character by.
+     * @param shift - The amount to shift the character by, cannot be negative.
      * @param alphabet - The alphabet to be used for the cipher (default is the English alphabet).
      * @param decrypt - If true, performs decryption by shifting in the opposite direction.
      * @returns The shifted character.
@@ -24,7 +24,7 @@ export class CaesarCipher {
         if (charIndex !== -1) {
             // Apply the Caesar Cipher shift while maintaining the case
             const isUpperCase = char === char.toUpperCase();
-            const effectiveShift = decrypt ? -shift : shift;
+            const effectiveShift = decrypt ? -Math.abs(shift) : Math.abs(shift);
             const shiftedIndex = (charIndex + effectiveShift) % alphabetLength;
             const shiftedChar = isUpperCase
                 ? alphabet.charAt(shiftedIndex < 0 ? shiftedIndex + alphabetLength : shiftedIndex).toUpperCase()
@@ -41,7 +41,7 @@ export class CaesarCipher {
      * Encrypts a given input string.
      *
      * @param input - The text to be encrypted.
-     * @param shift - The amount to shift each character by.
+     * @param shift - The amount to shift each character by, cannot be negative.
      * @param alphabet - The alphabet to be used for the cipher (default is the English alphabet).
      * @returns The encrypted string.
      */
@@ -56,7 +56,7 @@ export class CaesarCipher {
      * Decrypts a given input string.
      *
      * @param input - The text to be decrypted.
-     * @param shift - The amount to shift each character by.
+     * @param shift - The amount to shift each character by, cannot be negative.
      * @param alphabet - The alphabet to be used for the cipher (default is the English alphabet).
      * @returns The decrypted string.
      */

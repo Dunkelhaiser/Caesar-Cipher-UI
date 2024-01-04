@@ -48,4 +48,10 @@ describe("caesar cipher", () => {
             expect(result).toBe("ハロー・マイ・ビューティフル・ワールド!");
         });
     });
+
+    it("if provided shift is negative convert it to positive", () => {
+        const text = "Hello My Beautiful World!";
+        const result = CaesarCipher.encrypt(text, -7);
+        expect(result).toBe("Olssv Tf Ilhbapmbs Dvysk!");
+    });
 });
